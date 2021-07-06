@@ -1,0 +1,11 @@
+{
+  "name": "atividade02",
+  "version": "1.0.0",
+  "description": "Crie um servidor web em Node.js puro (sem uso de nenhuma biblioteca externa)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Daniel Cabral",
+  "license": "ISC"
+}

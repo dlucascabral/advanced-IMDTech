@@ -1,0 +1,2 @@
+select CarteirasEstudantis.ce_estudantenome, CarteirasEstudantis.ce_datanascimento
+from CarteirasEstudantis;

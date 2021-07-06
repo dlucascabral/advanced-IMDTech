@@ -1,0 +1,27 @@
+GET http://localhost:8080/produtos
+
+
+###
+
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+    "nome": "Sopa",
+    "preco": 3.60
+}
+
+###
+
+PUT http://localhost:8080/produtos/0ef302bf-5b43-4e89-bdcf-d09d8e43bcd2
+Content-Type: application/json
+
+{
+    "nome": "Sopa",
+    "descricao": "De legumes",
+    "preco": 3.60
+}
+
+###
+
+DELETE  http://localhost:8080/produtos/0ef302bf-5b43-4e89-bdcf-d09d8e43bcd2

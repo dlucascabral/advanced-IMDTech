@@ -2,8 +2,28 @@ const express = require('express')
 const router = express.Router()
 const validarProdutos = require('../middleware/produtos.middleware')
 const { Produto, Tag } = require('../models/')
-var  multer   =  require ( 'multer' ) 
-var  upload  =  multer ( {  dest : 'public/uploads/'  } )
+var  multer   =  require ( 'multer' )
+const path = require('path') 
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+      cb(null, 'public/uploads')
+  },
+  filename: function (req, file, cb) {
+       cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname)) 
+  }
+})
+
+const fileFilter = (req, file, cb) => {
+  const extensoes = /jpeg|jpg|png/i
+  if (extensoes.test(path.extname(file.originalname))){
+    cb(null, true)
+  } else {
+    return cb('Arquivo não suportado. Apenas jpg, jpeg ou png são suportados.')
+  }
+}
+
+var upload = multer ({ storage: storage,  fileFilter: fileFilter })
 
 router.post('/', validarProdutos)
 router.put('/', validarProdutos)

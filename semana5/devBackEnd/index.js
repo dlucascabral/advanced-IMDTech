@@ -4,6 +4,8 @@ const produtoRota = require("./rotas/produtos.rota")
 
 app.use(express.json());
 
+app.use('/static', express.static('public'))
+
 app.use("/produto", produtoRota)
 
 app.get("/", (req, res) => {

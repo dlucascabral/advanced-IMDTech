@@ -74,6 +74,17 @@ router.post('/', async (req, res) => {
 router.post('/:id/upload', upload.single('foto'), async (req, res) => {
   console.log(req.file)
   res.json({msg: 'Arquivo enviado com sucesso'})
+
+  const id = req.params.id
+  const produto = await Produto.findByPk(id)
+
+  if (produto) {
+    produto.foto = `/static/uploads/${req.file.filename}`
+    await produto.save()
+    res.json({ msg: "Upload realizado com sucesso!" })
+  } else {
+    res.status(400).json({ msg: "Produto não encontrado!" })
+  }
 })
 
 router.put('/:id', async (req, res) => {

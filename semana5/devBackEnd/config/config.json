@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "backend6e7",
+    "database": "backend8e9",
     "host": "127.0.0.1",
     "dialect": "sqlite",
     "storage": "dev.sqlite"
@@ -16,8 +16,8 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "1705",
+    "database": "backend8e9",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

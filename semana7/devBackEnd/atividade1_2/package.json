@@ -1,0 +1,19 @@
+{
+  "name": "atividade1",
+  "version": "1.0.0",
+  "description": "Resposta das atividade 01 e 02 de Desenvolvimento Backend da semana 7",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Daniel Cabral",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

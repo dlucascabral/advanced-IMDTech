@@ -1,0 +1,1 @@
+ALTER TABLE professores ADD Data_contratacao DATE DEFAULT "2020-01-01";

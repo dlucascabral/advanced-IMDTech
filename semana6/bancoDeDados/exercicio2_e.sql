@@ -1,0 +1,1 @@
+ALTER TABLE alunos ADD email VARCHAR(45) AFTER Alu_Nome;

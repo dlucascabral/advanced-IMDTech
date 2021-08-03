@@ -1,0 +1,1 @@
+grant create, alter on aula15.* to developer;

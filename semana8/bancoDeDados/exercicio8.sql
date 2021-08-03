@@ -1,0 +1,1 @@
+grant select(con_nome) on aula15.convenios to developer;

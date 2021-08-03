@@ -1,0 +1,1 @@
+grant insert, update, drop, select on aula15.medicos to developer;

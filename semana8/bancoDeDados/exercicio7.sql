@@ -1,0 +1,1 @@
+revoke select on aula15.convenios from developer;

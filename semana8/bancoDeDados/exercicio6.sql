@@ -1,0 +1,1 @@
+alter table medicos add med_salario decimal(5,2);

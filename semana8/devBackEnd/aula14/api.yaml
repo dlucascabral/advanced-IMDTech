@@ -1,0 +1,82 @@
+openapi: '3.0.2'
+info:
+  title: Projeto Base
+  version: '1.0'
+  description: API do projeto base da aula 14
+  contact:
+    name: Daniel Cabral
+servers:
+  - url: http://localhost:3000
+paths:
+  /users:
+    get:
+      operationId: getUsers
+      summary: Obtém todos os usuários do sistema
+      tags:
+        - Users
+      responses:
+        '200':
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  usuários:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Usuario"
+    post:
+      operationId: postUsers
+      summary: Submete um usuário para o sistema
+      tags:
+        - Users
+      parameters:
+        - in: header
+          name: name
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: email
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: password
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Adiciona usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: "Usuário adicionado com sucesso."
+
+components:
+  schemas:
+    Usuario:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nome do usuário
+          example: Felix
+        email:
+          type: string
+          description: E-mail do usuário
+          example: foo@bar.com.br
+        password:
+          type: string
+          description: senha do usuário
+          example: senhaSecreta
+        id:
+          type: integer
+          description: id do usuário
+          example: 33

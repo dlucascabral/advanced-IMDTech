@@ -1,0 +1,1 @@
+grant update(med_especialidade) on aula15.medicos to developer;
